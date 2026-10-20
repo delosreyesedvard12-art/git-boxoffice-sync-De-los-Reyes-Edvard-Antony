@@ -13,7 +13,9 @@ function calculateTicketPrice(quantity, basePrice, seatType) {
     total = total * 1.5;
   }
 
-  return Math.round(total);
+  total = total - 10;
+
+  return Math.max(0, Math.round(total));
 }
 
 module.exports = { isValidQuantity, calculateTicketPrice };
